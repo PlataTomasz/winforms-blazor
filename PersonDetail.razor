@@ -1,0 +1,23 @@
+﻿@using WinFormsBlazorTutorial.Services
+@inject IPersonService PersonService
+
+<div style="display: flex; align-items: center;">
+    <div>
+        <b>@Person?.FirstName @Person?.LastName</b><br />
+        @Person?.BirthDate
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int PersonId { get; set; }
+
+    public Person? Person { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        // Infinite loop?
+        Person = PersonService.GetPerson(PersonId);
+        StateHasChanged();
+    }
+}
