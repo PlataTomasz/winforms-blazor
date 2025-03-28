@@ -12,7 +12,11 @@ This is a simple Windows Forms app with Blazor integration. It is used to select
 
 <h1>Core points:</h1>
 
+- Written in C#, HTML and CSS, using Windows Forms with Blazor integration
+
 - It utilizes <b>BlazorWebView</b> class from <b>Microsoft.AspNetCore.Components.WebView.WindowsForms</b> package, to provide intergration of Windows Forms app with Blazor framework.
+
+- <b>BlazorWebView</b> utilizes simple HTML document with CSS stylesheet attached to it via \<link> tag.
 
 - Person details are retrieved from <b>IPersonService</b> interface, implemented in <b>PersonService</b> class, which is injected into a <b>Form</b> object. Currently service has data asigned at compile time, but by using service for that purpose, the code can be easily refactored, to use a database as a data source in It's implementation.
 
